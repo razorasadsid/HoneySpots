@@ -24,11 +24,15 @@ Windows :P
 Step 1: Make sure your accounts.csv is in the same directory as HoneySpots.exe and is named accounts.csv
 
 Step 2: Run Setup.exe - input the information it desires. 
-Instances are how many workers you wish to run. Allocate accounts per worker how you please (5 for one, 10 for the other, etc) ~you do not have to use all your accounts~
+Instances are how many workers you wish to run. Allocate accounts per worker how you please (5 for one, 10 for the other, etc) 
+
+~you do not have to use all your accounts~
 Make sure to have your GMapsKey on hand.
 Make sure that the columns for accounts.csv information line up (by default set to the PTC account gen style)
 ![inisetup](http://image.prntscr.com/image/6b56fb9e930f4b1497dbdebf7481c791.png)
 ![otherini](http://image.prntscr.com/image/94086d76008e46368baa3baa3e7dacaa.png)
+
+
 It will generate a config.ini, you can edit this later if you desire.
 
 ~~Step 2: Setup your config.ini - the usual settings/arguments for runserver.py
