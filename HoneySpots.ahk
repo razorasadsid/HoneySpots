@@ -108,7 +108,7 @@ IfNotEqual, A_Index, 1
 {
 PrevInst := A_Index - 1
 StartAcc%A_Index% := EndAcc%PrevInst%
-EndAcc%A_Index% := StartAcc%A_Index% + IndexAcc%A_Index% - 1
+EndAcc%A_Index% := StartAcc%A_Index% + IndexAcc%A_Index%
 }
 else
 {
