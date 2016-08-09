@@ -8,7 +8,7 @@ Now able to generate multiple areas and allocate accounts effeciently per area.
 Easy hex-to-hex connection layout
 Beehive style calcuations & integration
 Optimization and best-case calcuations
-Better UI and whatnot
+Better UI and whatnot - add a "back" button and value saving etc
 
 
 Easily used with accounts generated through https://github.com/FrostTheFox/ptc-acc-gen, just open the final accounts.csv with excel and delete the columns that aren't the usernames and passwords, and then save as a .csv
