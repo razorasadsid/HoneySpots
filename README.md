@@ -2,7 +2,7 @@
 Noob-friendly CSV parser and .bat generator for PokemonGoMap instances.
 Mainly, this is just an easy way to save some heartache if you've got many, many ptc accounts and don't feel like adding them by hand to some .bat files. This is a really good way to generate a few .bat files with very many accounts to scan a few small areas very quickly and accurately. 
 
-There is more to come - will attempt to integrate Beehive-style worker multithreading and calculations along with easy to set multi-workers with easy multi-account allocation per worker.
+There is more to come - will attempt to integrate Beehive-style worker multithreading and calculations along with easy to set multi-workers with easy multi-account allocation per worker - but that comes much later :P
 
 #How-To
 
