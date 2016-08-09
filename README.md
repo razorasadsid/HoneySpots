@@ -15,6 +15,10 @@ Easily used with accounts generated through https://github.com/FrostTheFox/ptc-a
 
 There is more to come - will attempt to integrate Beehive-style worker multithreading and calculations along with easy to set multi-workers with easy multi-account allocation per worker - but that comes much later :P
 
+##Prerequisites:
+A working form of PokemonGoMap on your PC
+Windows :P
+
 #How-To
 
 Step 1: Make sure your accounts.csv is in the same directory as HoneySpots.exe and is named accounts.csv
