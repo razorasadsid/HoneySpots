@@ -1,6 +1,15 @@
-# HoneySpots
+# HoneySpots - Easy multi-account-multi-location generator
+![mainimg](http://image.prntscr.com/image/dff2d457794f4e29be1b0088a62b6b33.png)
 Noob-friendly CSV parser and .bat generator for PokemonGoMap instances.
-Mainly, this is just an easy way to save some heartache if you've got many, many ptc accounts and don't feel like adding them by hand to some .bat files. This is a really good way to generate a few .bat files with very many accounts to scan a few small areas very quickly and accurately. 
+~~Mainly, this is just an easy way to save some heartache if you've got many, many ptc accounts and don't feel like adding them by hand to some .bat files. This is a really good way to generate a few .bat files with very many accounts to scan a few small areas very quickly and accurately. ~~
+Now able to generate multiple areas and allocate accounts effeciently per area.
+
+###To-Do:
+Easy hex-to-hex connection layout
+Beehive style calcuations & integration
+Optimization and best-case calcuations
+Better UI and whatnot
+
 
 Easily used with accounts generated through https://github.com/FrostTheFox/ptc-acc-gen, just open the final accounts.csv with excel and delete the columns that aren't the usernames and passwords, and then save as a .csv
 
