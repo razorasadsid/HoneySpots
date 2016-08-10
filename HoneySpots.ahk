@@ -63,13 +63,18 @@ Loop, parse, A_LoopReadLine, CSV
     }
 }
 
+
 ;;This section is dedicated to writing out the .bat file used to run the server in the end.
 FileDelete HoneySpots.bat ;Deletes any previous batch files in this programs directory.
 ;Writes out the initial server start to .bat
+IniRead, serverstartparam, config.ini, Main, serverstartparam
+IniRead, workerstartparam, config.ini, Main, workerstartparam
+
+
 FileAppend,
 (
 taskkill /IM python.exe /F
-`n Start "Server" /min python runserver.py
+`n%serverstartparam%
 ), HoneySpots.bat
 
 loop, %InstanceAmount%
@@ -77,30 +82,56 @@ loop, %InstanceAmount%
     
 IfNotEqual, A_Index, 1
 {
-FileAppend,
-(
-`n
-`nStart `"Moveable%A_Index%`" /min python runserver.py
-), HoneySpots.bat
+FileAppend, % "`n" "`n"workerstartparam, HoneySpots.bat
 }
     
  InstanceN = %A_Index%
 
 ;;;Load variables from config.ini
-IniRead, STValue, config.ini, Instance%instanceN%, ST
+
 IniRead, GMapskey, config.ini, Instance%instanceN%, GMapskey
 IniRead, UseCoords, config.ini, Instance%instanceN%, UseCoords
 IniRead, Location, config.ini, Instance%instanceN%, Location
 IniRead, Lat, config.ini, Instance%instanceN%, Lat
 IniRead, Long, config.ini, Instance%instanceN%, Long
-IniRead, SDValue, config.ini, Instance%instanceN%, SD
+
 IniRead, Usernamecolumn, config.ini, Instance%instanceN%, usernamecolumn
 IniRead, Passwordcolumn, config.ini, Instance%instanceN%, passwordcolumn
-IniRead, Accounts, config.ini, Instance%instanceN%, Accounts   
 
+IniRead, STglobal, config.ini, Main, ST
+IniRead, SDglobal, config.ini, Main, SD
+IniRead, Accglobal, config.ini, Main, accounts
 
+if STglobal = `global
+{
+    IniRead, STValue, config.ini, Instance1, ST
+}
+else
+{
+    IniRead, STValue, config.ini, Instance%instanceN%, ST
+}
 
+if SDglobal = `global
+{
+    IniRead, SDValue, config.ini, Instance1, SD
+}
+else
+{
+    IniRead, SDValue, config.ini, Instance%instanceN%, SD
+}
+
+if Accglobal = `global
+{
+    IniRead, Accounts, config.ini, Instance1, accounts   
  
+}
+else
+{
+    IniRead, Accounts, config.ini, Instance%instanceN%, accounts   
+ 
+}
+
+
 	
 IndexAcc%A_Index% = %Accounts% ;Saves the accounts value for this index
 
@@ -207,16 +238,20 @@ FileAppend,
 ), HoneySpots.bat
 }
 
+IniRead, customparam, config.ini, Main, customparam
+
 ;Adds the SD, DC, max connections argument declared as variable into .bat
 FileAppend,
 (
-%A_Space%-sd %SDValue% -dc --db-max_connections %MaxConnections%
+%A_Space%-sd %SDValue% %customparam%
 ), HoneySpots.bat
+
+IniRead, endparam, config.ini, Main, endparam
 
 ;Adds a pause so you don't need special eyes to see bugs haha
 FileAppend,
 (
-`n ping 127.0.0.1 -n 6 > nul
+`n%endparam%
 ), HoneySpots.bat
 
 
