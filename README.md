@@ -9,6 +9,9 @@ Easy hex-to-hex connection layout
 Beehive style calcuations & integration
 Optimization and best-case calcuations
 Better UI and whatnot - add a "back" button and value saving etc
+~~Add custom start parameters~~ DONE! Added end & other custom parameters too!
+~~Add global variable toggle~~ DONE! (some values)
+~~add csv coords reading~~ DONE!
 
 
 Easily used with accounts generated through https://github.com/FrostTheFox/ptc-acc-gen, just open the final accounts.csv with excel and delete the columns that aren't the usernames and passwords, and then save as a .csv
